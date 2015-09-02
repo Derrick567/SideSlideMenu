@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:mytools1="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.derrick.user.sideslidemenu.MyHorizontalScrollView
+        android:id="@+id/myHorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mytools1:rightPadding="200dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <include layout="@layout/left_menu"/>
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="@mipmap/qq">
+                 <Button
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="切換選單"
+                     android:onClick="toggleMenu"/>
+             </LinearLayout>
+
+        </LinearLayout>
+    </com.derrick.user.sideslidemenu.MyHorizontalScrollView>
+
+</RelativeLayout>
