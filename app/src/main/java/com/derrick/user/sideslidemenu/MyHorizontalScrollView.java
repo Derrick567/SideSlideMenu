@@ -101,7 +101,19 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
         super.onScrollChanged(l, t, oldl, oldt);
         float scale  =l*1.0f/mMenuWidth;  //1~0
 
-        ViewHelper.setTranslationX(mMenu,mMenuWidth*scale);
+        float rightScale =0.7f+0.3f*scale;
+        float leftScale = 1.0f-scale*0.3f;
+        float leftAlpha = 0.6f+0.4f*(1-scale);
+        ViewHelper.setTranslationX(mMenu, mMenuWidth * scale*0.8f);
+        ViewHelper.setScaleX(mMenu, leftScale);
+        ViewHelper.setScaleY(mMenu, leftAlpha);
+        ViewHelper.setAlpha(mMenu,leftAlpha);
+        //set content縮放的中心點
+        ViewHelper.setPivotX(mContent, 0);
+        ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
+        ViewHelper.setScaleX(mContent, rightScale);
+        ViewHelper.setScaleY(mContent, rightScale);
+
     }
 
     @Override

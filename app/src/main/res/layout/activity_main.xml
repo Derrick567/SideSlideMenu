@@ -8,18 +8,22 @@
         android:id="@+id/myHorizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mytools1:rightPadding="200dp">
+        mytools1:rightPadding="100dp"
+        android:background="@mipmap/img_frame_background"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <include layout="@layout/left_menu"/>
              <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="match_parent"
-                 android:background="@mipmap/qq">
+                 android:background="@mipmap/qq"
+                >
                  <Button
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
