@@ -1,5 +1,5 @@
-### 1.自定屬性
-
+### 1.自定屬性  
+  rightPadding :值越大 menu寬度越小  
 #### 1.使用時
 layout需先加上這行
 >xmlns:mytools1="http://schemas.android.com/apk/res-auto"
