@@ -8,8 +8,7 @@ layout需先加上這行
   
   #### 2.當使用自訂屬性, 會call 3個參數的constructor  
   
-  <pre><code>
-  public MyHorizontalScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
+      public MyHorizontalScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
    ...
   }
-  <code><pre>
+  
