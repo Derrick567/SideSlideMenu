@@ -12,4 +12,15 @@ layout需先加上這行
        }
 #### 2.獲取自訂屬性
      TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.MyHorizontalScrollView, defStyleAttr, 0);
-  
+      int n = a.getIndexCount();
+        for (int i = 0; i < n; i++) {
+            int attr = a.getIndex(i);
+            switch (attr) {
+                case R.styleable.MyHorizontalScrollView_rightPadding:
+                    mMenuRightPadding = a.getDimensionPixelSize(attr,
+                            (int) TypedValue.applyDimension
+                                    (TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()));
+            }
+        }
+        //使用完需要回收
+        a.recycle();
