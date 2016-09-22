@@ -17,9 +17,9 @@ layout需先加上這行
             int attr = a.getIndex(i);
             switch (attr) {
                 case R.styleable.MyHorizontalScrollView_rightPadding:
-                    mMenuRightPadding = a.getDimensionPixelSize(attr,
-                            (int) TypedValue.applyDimension
-                                    (TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()));
+                mMenuRightPadding = a.getDimensionPixelSize(attr,
+                (int) TypedValue.applyDimension
+                      (TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()));
             }
         }
         //使用完需要回收
