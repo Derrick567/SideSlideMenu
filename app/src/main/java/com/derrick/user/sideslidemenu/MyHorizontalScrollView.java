@@ -91,24 +91,33 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
         if (changed) {
-            this.scrollTo(mMenuWidth, 0);
+            this.scrollTo(mMenuWidth, 0); //正值 :view向左移
         }
     }
 
-
+    // l: 當前的getScrollX()
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
+
+        //向左滑動 scale :1 to 0
         float scale  =l*1.0f/mMenuWidth;  //1~0
 
+        //content area 縮放從 1 to 0.7
         float rightScale =0.7f+0.3f*scale;
+
+        //menu area 縮放從 0.7 to 1
         float leftScale = 1.0f-scale*0.3f;
+
+        //menu透明度 從0.6 to 1
         float leftAlpha = 0.6f+0.4f*(1-scale);
+
         ViewHelper.setTranslationX(mMenu, mMenuWidth * scale*0.8f);
         ViewHelper.setScaleX(mMenu, leftScale);
-        ViewHelper.setScaleY(mMenu, leftAlpha);
+        ViewHelper.setScaleY(mMenu, leftScale);
         ViewHelper.setAlpha(mMenu,leftAlpha);
-        //set content縮放的中心點
+
+        //將content area中心點設至左邊中間 ，以便縮放時 左邊界座標不變
         ViewHelper.setPivotX(mContent, 0);
         ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
         ViewHelper.setScaleX(mContent, rightScale);
