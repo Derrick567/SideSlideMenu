@@ -1,6 +1,8 @@
-# 一.自訂ViewGroup 
-  ### onMeasure() 計算child view 及設置本身view的寬高  
-  ### onLayout()  決定child 的布局及位置
+## 一.自訂ViewGroup 
+### onMeasure() 計算child view 及設置本身view的寬高  
+
+### onLayout()  決定child 的布局及位置
+
 ### 自定屬性  
   rightPadding :值越大 menu寬度越小  
 #### 1.使用時
